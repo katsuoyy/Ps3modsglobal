@@ -87,3 +87,50 @@ button:hover{
     margin-top:20px;
     font-size:18px;
 }
+
+
+.mods{
+    padding:40px;
+    text-align:center;
+}
+
+.mods h2{
+    color:#2da8ff;
+    font-size:32px;
+}
+
+.lista-mods{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.card-mod{
+    background:#1b1b22;
+    width:300px;
+    border-radius:15px;
+    overflow:hidden;
+    border:1px solid #2da8ff;
+    box-shadow:0 0 15px rgba(45,168,255,.2);
+    transition:.3s;
+}
+
+.card-mod:hover{
+    transform:translateY(-8px);
+}
+
+.card-mod img{
+    width:100%;
+    height:170px;
+    object-fit:cover;
+}
+
+.card-mod h3{
+    color:#2da8ff;
+}
+
+.card-mod p{
+    padding:0 15px;
+    color:#ccc;
+}
