@@ -1,0 +1,38 @@
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#111;
+    color:white;
+}
+
+header{
+    background:#1e1e1e;
+    text-align:center;
+    padding:30px;
+}
+
+header h1{
+    margin:0;
+    color:#00bfff;
+}
+
+.mod{
+    background:#222;
+    margin:20px;
+    padding:20px;
+    border-radius:10px;
+}
+
+button{
+    background:#00bfff;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#0099cc;
+}
