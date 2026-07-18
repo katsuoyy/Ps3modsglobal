@@ -59,3 +59,31 @@ button{
 button:hover{
     transform:scale(1.05);
 }
+.banner{
+    height:350px;
+    background:
+    linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.8)),
+    url("imagens/banner.jpg");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.banner-texto h2{
+    font-size:45px;
+    color:white;
+    text-shadow:0 0 15px #2da8ff;
+}
+
+.banner-texto p{
+    font-size:18px;
+    color:#ddd;
+}
+
+.banner button{
+    margin-top:20px;
+    font-size:18px;
+}
