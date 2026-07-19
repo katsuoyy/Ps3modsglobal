@@ -134,3 +134,17 @@ button:hover{
     padding:0 15px;
     color:#ccc;
 }
+
+.galeria{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    justify-content:center;
+}
+
+.galeria img{
+    width:300px;
+    height:200px;
+    object-fit:cover;
+    border-radius:10px;
+}
