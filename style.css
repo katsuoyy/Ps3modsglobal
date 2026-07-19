@@ -148,3 +148,40 @@ button:hover{
     object-fit:cover;
     border-radius:10px;
 }
+
+.pagina-mod{
+    padding:30px;
+    text-align:center;
+}
+
+
+.info-mod{
+    background:#1c1c1c;
+    padding:20px;
+    border-radius:15px;
+    margin:20px auto;
+    max-width:700px;
+}
+
+
+.galeria{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+
+.galeria img{
+    width:300px;
+    height:180px;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+
+.download{
+    margin-top:25px;
+    padding:15px 35px;
+    font-size:18px;
+}
