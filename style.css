@@ -217,3 +217,39 @@ transform:scale(1.05);
     display: block;
     margin: 20px auto;
     }
+
+.categorias{
+
+padding:40px;
+text-align:center;
+
+}
+
+
+.lista-categorias{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+
+}
+
+
+.lista-categorias a{
+
+background:#222;
+color:white;
+padding:20px;
+border-radius:12px;
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+
+.lista-categorias a:hover{
+
+transform:scale(1.05);
+
+}
