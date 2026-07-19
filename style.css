@@ -164,11 +164,34 @@ button:hover{
 }
 
 
-.galeria{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:15px;
+.galeria {
+
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+
+}
+
+
+.galeria img {
+
+width:250px;
+height:150px;
+object-fit:cover;
+border-radius:12px;
+cursor:pointer;
+
+transition:0.3s;
+
+}
+
+
+.galeria img:hover {
+
+transform:scale(1.05);
+
+}
 }
 
 
