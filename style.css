@@ -253,3 +253,17 @@ transition:.3s;
 transform:scale(1.05);
 
 }
+
+.pesquisa{
+    text-align:center;
+    margin:20px 0;
+}
+
+.pesquisa input{
+    width:80%;
+    max-width:500px;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid #555;
+    font-size:16px;
+}
