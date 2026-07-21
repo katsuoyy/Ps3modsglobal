@@ -16,6 +16,7 @@ const mods = [
         "imagens/Follower Light And Shade/foto1.jpg",
         "imagens/Follower Light And Shade/foto2.jpg",
         "imagens/Follower Light And Shade/foto3.jpg"
+    ]
 
 }
 
