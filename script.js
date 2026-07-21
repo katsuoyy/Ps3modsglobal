@@ -122,3 +122,24 @@ if (tituloCategoria && typeof mods !== "undefined") {
         });
 
 }
+// ===== GERAR CATEGORIAS AUTOMATICAMENTE =====
+
+const listaCategorias = document.getElementById("lista-categorias");
+
+if (listaCategorias && typeof mods !== "undefined") {
+
+    const categorias = [...new Set(mods.map(mod => mod.categoria))];
+
+    categorias.sort();
+
+    categorias.forEach(categoria => {
+
+        listaCategorias.innerHTML += `
+            <a class="card-categoria" href="categoria.html?nome=${encodeURIComponent(categoria)}">
+                ${categoria}
+            </a>
+        `;
+
+    });
+
+}
