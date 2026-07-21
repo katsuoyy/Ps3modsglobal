@@ -656,3 +656,90 @@ color:#aaa;
 border-top:1px solid rgba(45,168,255,.2);
 
 }
+/* ==========================
+   MASCOTE CHIBI
+========================== */
+
+.mascote{
+
+position:fixed;
+
+right:20px;
+
+bottom:20px;
+
+z-index:9999;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+animation:flutuar 3s ease-in-out infinite;
+
+}
+
+.mascote img{
+
+width:110px;
+
+height:auto;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.mascote img:hover{
+
+transform:scale(1.1);
+
+}
+
+.fala{
+
+margin-top:8px;
+
+background:rgba(0,0,0,.8);
+
+padding:10px 15px;
+
+border-radius:15px;
+
+color:white;
+
+font-size:14px;
+
+max-width:180px;
+
+text-align:center;
+
+box-shadow:0 0 15px rgba(45,168,255,.5);
+
+}
+
+/* Flutuar */
+
+@keyframes flutuar{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
