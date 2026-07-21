@@ -267,3 +267,27 @@ transform:scale(1.05);
     border:1px solid #555;
     font-size:16px;
 }
+
+
+.info-mod{
+
+width:100%;
+max-width:700px;
+margin:25px auto;
+border-collapse:collapse;
+
+}
+
+.info-mod td{
+
+border:1px solid #444;
+padding:12px;
+
+}
+
+.info-mod td:first-child{
+
+font-weight:bold;
+width:180px;
+
+}
