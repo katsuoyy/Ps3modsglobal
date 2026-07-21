@@ -1,11 +1,23 @@
 const mods = [
 
 {
+    id: 1,
     nome: "Follower Light And Shade",
+
+    categoria: "Companions",
+
     imagem: "imagens/mod1.jpg",
-    descricao: "Adicione uma nova seguidora chamada Eris para acompanhá-lo em Skyrim.",
-    pagina: "Follower%20Light%20And%20Shade.html",
-    categoria: "Companions"
+
+    descricao: "Adicione uma nova seguidora no Bannered Mare em Whiterun chamada Eris (Light Shade), para acompanhá-lo em suas aventuras.",
+
+    download: "https://www.mediafire.com/file/gw9ssk3ib6shs2i/Light+And+Shade.zip/file",
+
+    galeria: [
+        "imagens/follower/foto1.jpg",
+        "imagens/follower/foto2.jpg",
+        "imagens/follower/foto3.jpg"
+    ]
+
 }
 
 ];
