@@ -85,24 +85,40 @@ galeria.innerHTML += `
 });
 
 }
-// ===== CATEGORIAS =====
+// ===== PÁGINA DE CATEGORIA =====
 
-const listaCategorias = document.getElementById("lista-categorias");
+const tituloCategoria = document.getElementById("titulo-categoria");
 
-if (listaCategorias && typeof mods !== "undefined") {
+if (tituloCategoria && typeof mods !== "undefined") {
 
-    const categorias = [...new Set(mods.map(mod => mod.categoria))];
+    const parametros = new URLSearchParams(window.location.search);
+    const categoria = parametros.get("nome");
 
-    categorias.sort();
+    document.getElementById("titulo-categoria").textContent = categoria;
+    document.getElementById("nome-categoria").textContent = categoria;
 
-    categorias.forEach(function(categoria){
+    const lista = document.getElementById("lista-mods");
 
-        listaCategorias.innerHTML += `
-            <a href="index.html?categoria=${encodeURIComponent(categoria)}" class="card-categoria">
-                ${categoria}
-            </a>
-        `;
+    mods
+        .filter(mod => mod.categoria === categoria)
+        .forEach(function(mod){
 
-    });
+            lista.innerHTML += `
+                <div class="card-mod">
+
+                    <img src="../${mod.imagem}" alt="${mod.nome}">
+
+                    <h3>${mod.nome}</h3>
+
+                    <p>${mod.descricao}</p>
+
+                    <a href="mod.html?id=${mod.id}">
+                        <button>VER MOD</button>
+                    </a>
+
+                </div>
+            `;
+
+        });
 
 }
