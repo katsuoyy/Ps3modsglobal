@@ -13,10 +13,9 @@ const mods = [
     download: "https://www.mediafire.com/file/gw9ssk3ib6shs2i/Light+And+Shade.zip/file",
 
     galeria: [
-        "imagens/follower/foto1.jpg",
-        "imagens/follower/foto2.jpg",
-        "imagens/follower/foto3.jpg"
-    ]
+        "imagens/Follower Light And Shade/foto1.jpg",
+        "imagens/Follower Light And Shade/foto2.jpg",
+        "imagens/Follower Light And Shade/foto3.jpg"
 
 }
 
