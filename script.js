@@ -85,3 +85,24 @@ galeria.innerHTML += `
 });
 
 }
+// ===== CATEGORIAS =====
+
+const listaCategorias = document.getElementById("lista-categorias");
+
+if (listaCategorias && typeof mods !== "undefined") {
+
+    const categorias = [...new Set(mods.map(mod => mod.categoria))];
+
+    categorias.sort();
+
+    categorias.forEach(function(categoria){
+
+        listaCategorias.innerHTML += `
+            <a href="index.html?categoria=${encodeURIComponent(categoria)}" class="card-categoria">
+                ${categoria}
+            </a>
+        `;
+
+    });
+
+}
