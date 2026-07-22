@@ -1,6 +1,6 @@
 // ===== LISTA DE TODOS OS MODS =====
 
-const listaMods = document.getElementById("lista-mods");
+const listaMods = document.getElementById("todos-mods");
 
 
 if(listaMods && typeof mods !== "undefined"){
