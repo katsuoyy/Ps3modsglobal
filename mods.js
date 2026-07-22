@@ -1,23 +1,49 @@
-const mods = [
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-{
-    id: 1,
-    nome: "Follower Light And Shade",
+<head>
 
-    categoria: "Companions",
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    imagem: "imagens/mod1.jpg",
+<title>Categorias</title>
 
-    descricao: "Adicione uma nova seguidora no Bannered Mare em Whiterun chamada Eris (Light Shade), para acompanhá-lo em suas aventuras.",
+<link rel="stylesheet" href="../style.css">
 
-    download: "https://www.mediafire.com/file/gw9ssk3ib6shs2i/Light+And+Shade.zip/file",
+</head>
 
-    galeria: [
-        "imagens/Follower Light And Shade/foto1.jpg",
-        "imagens/Follower Light And Shade/foto2.jpg",
-        "imagens/Follower Light And Shade/foto3.jpg"
-    ]
+<body>
 
-}
+<header>
 
-];
+<div class="logo">
+<h1>PS3ModsGlobal</h1>
+<p>Categorias</p>
+</div>
+
+<nav>
+<a href="../index.html">Início</a>
+<a href="index.html">Todos os Mods</a>
+<a href="categorias.html">Categorias</a>
+</nav>
+
+</header>
+
+<section class="mods">
+
+<h2>Categorias</h2>
+
+<div class="lista-categorias" id="lista-categorias">
+
+<!-- As categorias serão adicionadas automaticamente pelo script.js -->
+
+</div>
+
+</section>
+
+<script src="../mods.js"></script>
+<script src="../script.js"></script>
+
+</body>
+
+</html>
