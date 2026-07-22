@@ -1,4 +1,4 @@
-// ===== LISTA DE MODS =====
+// ===== LISTA DE TODOS OS MODS =====
 
 const listaMods = document.getElementById("lista-mods");
 
@@ -40,12 +40,10 @@ if(pesquisa){
 
         let texto = pesquisa.value.toLowerCase();
 
-
         document.querySelectorAll(".card-mod").forEach(function(card){
 
             let nome = card.querySelector("h3")
             .textContent.toLowerCase();
-
 
             card.style.display =
             nome.includes(texto) ? "" : "none";
@@ -65,7 +63,6 @@ if(typeof mods !== "undefined"){
     const parametros =
     new URLSearchParams(window.location.search);
 
-
     const id =
     Number(parametros.get("id"));
 
@@ -74,13 +71,7 @@ if(typeof mods !== "undefined"){
     mods.find(m => m.id === id);
 
 
-
     if(mod){
-
-
-        document.title = mod.nome;
-
-
 
         if(document.getElementById("nome"))
         document.getElementById("nome").textContent = mod.nome;
@@ -107,12 +98,9 @@ if(typeof mods !== "undefined"){
         document.getElementById("galeria");
 
 
-
         if(galeria && mod.galeria){
 
-
             mod.galeria.forEach(function(foto){
-
 
                 galeria.innerHTML += `
 
@@ -120,12 +108,9 @@ if(typeof mods !== "undefined"){
 
                 `;
 
-
             });
 
-
         }
-
 
     }
 
@@ -133,85 +118,10 @@ if(typeof mods !== "undefined"){
 
 
 
-// ===== PÁGINA DE CATEGORIA =====
-
-const tituloCategoria =
-document.getElementById("titulo-categoria");
-
-
-
-if(tituloCategoria && typeof mods !== "undefined"){
-
-
-    const parametros =
-    new URLSearchParams(window.location.search);
-
-
-
-    const categoria =
-    parametros.get("nome");
-
-
-
-    tituloCategoria.textContent = categoria;
-
-
-
-    if(document.getElementById("nome-categoria"))
-    document.getElementById("nome-categoria").textContent = categoria;
-
-
-
-    const lista =
-    document.getElementById("lista-mods");
-
-
-
-    mods
-    .filter(mod => mod.categoria === categoria)
-    .forEach(function(mod){
-
-
-        lista.innerHTML += `
-
-
-        <div class="card-mod">
-
-
-            <img src="../${mod.imagem}" alt="${mod.nome}">
-
-
-            <h3>${mod.nome}</h3>
-
-
-            <p>${mod.descricao}</p>
-
-
-            <a href="mod.html?id=${mod.id}">
-                <button>VER MOD</button>
-            </a>
-
-
-        </div>
-
-
-        `;
-
-
-    });
-
-
-}
-
-
-
-
-// ===== CRIAR CATEGORIAS AUTOMATICAMENTE =====
-
+// ===== CATEGORIA AUTOMÁTICA =====
 
 const listaCategorias =
 document.getElementById("lista-categorias");
-
 
 
 if(listaCategorias && typeof mods !== "undefined"){
@@ -224,25 +134,74 @@ if(listaCategorias && typeof mods !== "undefined"){
     categorias.sort();
 
 
-
     categorias.forEach(function(categoria){
 
 
         listaCategorias.innerHTML += `
 
-
         <a class="card-categoria"
         href="categoria.html?nome=${encodeURIComponent(categoria)}">
 
-            ${categoria}
+        ${categoria}
 
         </a>
-
 
         `;
 
 
     });
 
+}
+
+
+
+// ===== MOSTRAR MODS DA CATEGORIA =====
+
+const listaCategoriaMods =
+document.getElementById("lista-mods");
+
+
+const tituloCategoria =
+document.getElementById("titulo-categoria");
+
+
+if(listaCategoriaMods && tituloCategoria && typeof mods !== "undefined"){
+
+
+    const parametros =
+    new URLSearchParams(window.location.search);
+
+
+    const categoria =
+    parametros.get("nome");
+
+
+    tituloCategoria.textContent = categoria;
+
+
+    mods
+    .filter(mod => mod.categoria === categoria)
+    .forEach(function(mod){
+
+
+        listaCategoriaMods.innerHTML += `
+
+        <div class="card-mod">
+
+            <img src="../${mod.imagem}" alt="${mod.nome}">
+
+            <h3>${mod.nome}</h3>
+
+            <p>${mod.descricao}</p>
+
+            <a href="mod.html?id=${mod.id}">
+                <button>VER MOD</button>
+            </a>
+
+        </div>
+
+        `;
+
+    });
 
 }
