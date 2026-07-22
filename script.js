@@ -7,19 +7,21 @@ if (listaMods && typeof mods !== "undefined") {
     mods.forEach(function(mod){
 
         listaMods.innerHTML += `
-            <div class="card-mod">
 
-                <img src="../${mod.imagem}" alt="${mod.nome}">
+        <div class="card-mod">
 
-                <h3>${mod.nome}</h3>
+            <img src="../${mod.imagem}" alt="${mod.nome}">
 
-                <p>${mod.descricao}</p>
+            <h3>${mod.nome}</h3>
 
-                <a href="mod.html?id=${mod.id}">
-                    <button>VER MOD</button>
-                </a>
+            <p>${mod.descricao}</p>
 
-            </div>
+            <a href="mod.html?id=${mod.id}">
+                <button>VER MOD</button>
+            </a>
+
+        </div>
+
         `;
 
     });
@@ -34,19 +36,21 @@ const pesquisa = document.getElementById("pesquisa");
 
 if(pesquisa){
 
-pesquisa.addEventListener("keyup",function(){
+    pesquisa.addEventListener("keyup", function(){
 
-let texto = pesquisa.value.toLowerCase();
+        let texto = pesquisa.value.toLowerCase();
 
-document.querySelectorAll(".card-mod").forEach(function(card){
+        document.querySelectorAll(".card-mod").forEach(function(card){
 
-let nome = card.querySelector("h3").textContent.toLowerCase();
+            let nome = card.querySelector("h3")
+            .textContent.toLowerCase();
 
-card.style.display = nome.includes(texto) ? "" : "none";
+            card.style.display =
+            nome.includes(texto) ? "" : "none";
 
-});
+        });
 
-});
+    });
 
 }
 
@@ -54,56 +58,172 @@ card.style.display = nome.includes(texto) ? "" : "none";
 
 // ===== PÁGINA DO MOD =====
 
-const parametros = new URLSearchParams(window.location.search);
+if(typeof mods !== "undefined"){
 
-const id = Number(parametros.get("id"));
+    const parametros =
+    new URLSearchParams(window.location.search);
 
-const mod = mods.find(m => m.id === id);
+    const id =
+    Number(parametros.get("id"));
 
-if(mod){
+    const mod =
+    mods.find(m => m.id === id);
 
-document.title = mod.nome;
 
-document.getElementById("nome").textContent = mod.nome;
+    if(mod){
 
-document.getElementById("categoria").textContent = mod.categoria;
+        document.title = mod.nome;
 
-document.getElementById("descricao").textContent = mod.descricao;
 
-document.getElementById("capa").src = "../" + mod.imagem;
+        if(document.getElementById("nome"))
+        document.getElementById("nome").textContent = mod.nome;
 
-document.getElementById("download").href = mod.download;
 
-const galeria = document.getElementById("galeria");
+        if(document.getElementById("categoria"))
+        document.getElementById("categoria").textContent = mod.categoria;
 
-mod.galeria.forEach(function(foto){
 
-galeria.innerHTML += `
-<img src="../${foto}">
-`;
+        if(document.getElementById("descricao"))
+        document.getElementById("descricao").textContent = mod.descricao;
 
-});
+
+        if(document.getElementById("capa"))
+        document.getElementById("capa").src = "../" + mod.imagem;
+
+
+        if(document.getElementById("download"))
+        document.getElementById("download").href = mod.download;
+
+
+
+        const galeria =
+        document.getElementById("galeria");
+
+
+        if(galeria && mod.galeria){
+
+            mod.galeria.forEach(function(foto){
+
+                galeria.innerHTML += `
+
+                <img src="../${foto}">
+
+                `;
+
+            });
+
+        }
+
+    }
 
 }
+
+
+
 // ===== PÁGINA DE CATEGORIA =====
 
-const tituloCategoria = document.getElementById("titulo-categoria");
+const tituloCategoria =
+document.getElementById("titulo-categoria");
 
-if (tituloCategoria && typeof mods !== "undefined") {
 
-    const parametros = new URLSearchParams(window.location.search);
-    const categoria = parametros.get("nome");
+if(tituloCategoria && typeof mods !== "undefined"){
 
-    document.getElementById("titulo-categoria").textContent = categoria;
-    document.getElementById("nome-categoria").textContent = categoria;
 
-    const lista = document.getElementById("lista-mods");
+    const parametros =
+    new URLSearchParams(window.location.search);
+
+
+    const categoria =
+    parametros.get("nome");
+
+
+    document.getElementById("titulo-categoria")
+    .textContent = categoria;
+
+
+    if(document.getElementById("nome-categoria"))
+    document.getElementById("nome-categoria")
+    .textContent = categoria;
+
+
+
+    const lista =
+    document.getElementById("lista-mods");
+
 
     mods
-        .filter(mod => mod.categoria === categoria)
-        .forEach(function(mod){
+    .filter(mod => mod.categoria === categoria)
+    .forEach(function(mod){
 
-            lista.innerHTML += `
+
+        lista.innerHTML += `
+
+        <div class="card-mod">
+
+            <img src="../${mod.imagem}" alt="${mod.nome}">
+
+
+            <h3>${mod.nome}</h3>
+
+
+            <p>${mod.descricao}</p>
+
+
+            <a href="mod.html?id=${mod.id}">
+                <button>VER MOD</button>
+            </a>
+
+
+        </div>
+
+        `;
+
+
+    });
+
+
+}
+
+
+
+// ===== CRIAR CATEGORIAS AUTOMATICAMENTE =====
+
+
+const listaCategorias =
+document.getElementById("lista-categorias");
+
+
+if(listaCategorias && typeof mods !== "undefined"){
+
+
+    const categorias =
+    [...new Set(mods.map(mod => mod.categoria))];
+
+
+    categorias.sort();
+
+
+    categorias.forEach(function(categoria){
+
+
+        listaCategorias.innerHTML += `
+
+
+        <a class="card-categoria"
+        href="categoria.html?nome=${encodeURIComponent(categoria)}">
+
+            ${categoria}
+
+        </a>
+
+
+        `;
+
+
+    });
+
+
+}            lista.innerHTML += `
                 <div class="card-mod">
 
                     <img src="../${mod.imagem}" alt="${mod.nome}">
