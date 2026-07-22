@@ -1,84 +1,269 @@
-// ================================
-// PS3ModsGlobal 2.0
-// ================================
+// ===== LISTA DE TODOS OS MODS =====
 
-if (typeof mods !== "undefined") {
+const listaMods = document.getElementById("lista-mods");
 
-    // ==========================
-    // LISTA DE MODS
-    // ==========================
 
-    const listaMods =
-    document.getElementById("lista-mods");
+if(listaMods && typeof mods !== "undefined"){
 
-    if (listaMods && !window.location.href.includes("categoria.html")) {
 
-        mods.forEach(mod => {
+    mods.forEach(function(mod){
 
-            listaMods.innerHTML += `
 
-            <div class="card-mod">
+        listaMods.innerHTML += `
 
-                <img src="../${mod.imagem}" alt="${mod.nome}">
+        <div class="card-mod">
 
-                <h3>${mod.nome}</h3>
+            <img src="../${mod.imagem}" alt="${mod.nome}">
 
-                <p>${mod.descricao}</p>
+            <h3>${mod.nome}</h3>
 
-                <a href="mod.html?id=${mod.id}">
-                    <button>VER MOD</button>
-                </a>
+            <p>${mod.descricao}</p>
 
-            </div>
 
-            `;
+            <a href="mod.html?id=${mod.id}">
+                <button>VER MOD</button>
+            </a>
+
+
+        </div>
+
+        `;
+
+
+    });
+
+
+}
+
+
+
+
+// ===== PESQUISA =====
+
+
+const pesquisa = document.getElementById("pesquisa");
+
+
+if(pesquisa){
+
+
+    pesquisa.addEventListener("keyup",function(){
+
+
+        let texto = pesquisa.value.toLowerCase();
+
+
+        document.querySelectorAll(".card-mod").forEach(function(card){
+
+
+            let nome =
+            card.querySelector("h3")
+            .textContent
+            .toLowerCase();
+
+
+            card.style.display =
+            nome.includes(texto) ? "" : "none";
+
 
         });
 
-    }
 
-    // ==========================
-    // PESQUISA
-    // ==========================
+    });
 
-    const pesquisa =
-    document.getElementById("pesquisa");
 
-    if (pesquisa) {
+}
 
-        pesquisa.addEventListener("keyup", () => {
 
-            let texto =
-            pesquisa.value.toLowerCase();
 
-            document
-            .querySelectorAll(".card-mod")
-            .forEach(card => {
 
-                let nome =
-                card.querySelector("h3")
-                .textContent
-                .toLowerCase();
+// ===== PÁGINA DO MOD =====
 
-                card.style.display =
-                nome.includes(texto)
-                ? ""
-                : "none";
+
+if(typeof mods !== "undefined"){
+
+
+    const parametros =
+    new URLSearchParams(window.location.search);
+
+
+    const id =
+    Number(parametros.get("id"));
+
+
+    const mod =
+    mods.find(m => m.id === id);
+
+
+
+    if(mod){
+
+
+        if(document.getElementById("nome"))
+        document.getElementById("nome").textContent = mod.nome;
+
+
+
+        if(document.getElementById("categoria"))
+        document.getElementById("categoria").textContent = mod.categoria;
+
+
+
+        if(document.getElementById("descricao"))
+        document.getElementById("descricao").textContent = mod.descricao;
+
+
+
+        if(document.getElementById("capa"))
+        document.getElementById("capa").src =
+        "../" + mod.imagem;
+
+
+
+        if(document.getElementById("download"))
+        document.getElementById("download").href =
+        mod.download;
+
+
+
+        const galeria =
+        document.getElementById("galeria");
+
+
+
+        if(galeria && mod.galeria){
+
+
+            mod.galeria.forEach(function(foto){
+
+
+                galeria.innerHTML += `
+
+                <img src="../${foto}">
+
+                `;
+
 
             });
 
-        });
+
+        }
+
 
     }
 
-    // ==========================
-    // GERAR CATEGORIAS
-    // ==========================
 
-    const listaCategorias =
-    document.getElementById("lista-categorias");
+}
 
-    if (listaCategorias) {
 
-        const categorias =
-        [...new Set(mods.map(mod => mod.categoria
+
+
+// ===== CRIAR CATEGORIAS AUTOMATICAMENTE =====
+
+
+const listaCategorias =
+document.getElementById("lista-categorias");
+
+
+
+if(listaCategorias && typeof mods !== "undefined"){
+
+
+    const categorias =
+    [...new Set(mods.map(mod => mod.categoria))];
+
+
+
+    categorias.sort();
+
+
+
+    categorias.forEach(function(categoria){
+
+
+
+        listaCategorias.innerHTML += `
+
+        <a class="card-categoria"
+        href="categoria.html?nome=${encodeURIComponent(categoria)}">
+
+        ${categoria}
+
+        </a>
+
+        `;
+
+
+    });
+
+
+}
+
+
+
+
+
+// ===== MOSTRAR MODS DA CATEGORIA =====
+
+
+const tituloCategoria =
+document.getElementById("titulo-categoria");
+
+
+const listaCategoria =
+document.getElementById("lista-mods");
+
+
+
+if(tituloCategoria && listaCategoria && typeof mods !== "undefined"){
+
+
+    const parametros =
+    new URLSearchParams(window.location.search);
+
+
+
+    const categoria =
+    parametros.get("nome");
+
+
+
+    tituloCategoria.textContent = categoria;
+
+
+
+    mods
+    .filter(mod => mod.categoria === categoria)
+    .forEach(function(mod){
+
+
+
+        listaCategoria.innerHTML += `
+
+        <div class="card-mod">
+
+
+            <img src="../${mod.imagem}" alt="${mod.nome}">
+
+
+            <h3>${mod.nome}</h3>
+
+
+            <p>${mod.descricao}</p>
+
+
+            <a href="mod.html?id=${mod.id}">
+                <button>VER MOD</button>
+            </a>
+
+
+        </div>
+
+
+        `;
+
+
+    });
+
+
+}
