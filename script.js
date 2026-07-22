@@ -2,9 +2,12 @@
 
 const listaMods = document.getElementById("lista-mods");
 
-if (listaMods && typeof mods !== "undefined") {
+
+if(listaMods && typeof mods !== "undefined"){
+
 
     mods.forEach(function(mod){
+
 
         listaMods.innerHTML += `
 
@@ -16,52 +19,73 @@ if (listaMods && typeof mods !== "undefined") {
 
             <p>${mod.descricao}</p>
 
+
             <a href="mod.html?id=${mod.id}">
                 <button>VER MOD</button>
             </a>
+
 
         </div>
 
         `;
 
+
     });
 
+
 }
+
 
 
 
 // ===== PESQUISA =====
 
+
 const pesquisa = document.getElementById("pesquisa");
+
 
 if(pesquisa){
 
-    pesquisa.addEventListener("keyup", function(){
+
+    pesquisa.addEventListener("keyup",function(){
+
 
         let texto = pesquisa.value.toLowerCase();
 
+
         document.querySelectorAll(".card-mod").forEach(function(card){
 
-            let nome = card.querySelector("h3")
-            .textContent.toLowerCase();
+
+            let nome =
+            card.querySelector("h3")
+            .textContent
+            .toLowerCase();
+
 
             card.style.display =
             nome.includes(texto) ? "" : "none";
 
+
         });
 
+
     });
+
 
 }
 
 
 
+
 // ===== PÁGINA DO MOD =====
+
 
 if(typeof mods !== "undefined"){
 
+
     const parametros =
     new URLSearchParams(window.location.search);
+
 
     const id =
     Number(parametros.get("id"));
@@ -71,26 +95,34 @@ if(typeof mods !== "undefined"){
     mods.find(m => m.id === id);
 
 
+
     if(mod){
+
 
         if(document.getElementById("nome"))
         document.getElementById("nome").textContent = mod.nome;
+
 
 
         if(document.getElementById("categoria"))
         document.getElementById("categoria").textContent = mod.categoria;
 
 
+
         if(document.getElementById("descricao"))
         document.getElementById("descricao").textContent = mod.descricao;
 
 
+
         if(document.getElementById("capa"))
-        document.getElementById("capa").src = "../" + mod.imagem;
+        document.getElementById("capa").src =
+        "../" + mod.imagem;
+
 
 
         if(document.getElementById("download"))
-        document.getElementById("download").href = mod.download;
+        document.getElementById("download").href =
+        mod.download;
 
 
 
@@ -98,9 +130,12 @@ if(typeof mods !== "undefined"){
         document.getElementById("galeria");
 
 
+
         if(galeria && mod.galeria){
 
+
             mod.galeria.forEach(function(foto){
+
 
                 galeria.innerHTML += `
 
@@ -108,20 +143,27 @@ if(typeof mods !== "undefined"){
 
                 `;
 
+
             });
+
 
         }
 
+
     }
+
 
 }
 
 
 
-// ===== CATEGORIA AUTOMÁTICA =====
+
+// ===== CRIAR CATEGORIAS AUTOMATICAMENTE =====
+
 
 const listaCategorias =
 document.getElementById("lista-categorias");
+
 
 
 if(listaCategorias && typeof mods !== "undefined"){
@@ -131,10 +173,13 @@ if(listaCategorias && typeof mods !== "undefined"){
     [...new Set(mods.map(mod => mod.categoria))];
 
 
+
     categorias.sort();
 
 
+
     categorias.forEach(function(categoria){
+
 
 
         listaCategorias.innerHTML += `
@@ -151,32 +196,40 @@ if(listaCategorias && typeof mods !== "undefined"){
 
     });
 
+
 }
 
 
 
-// ===== MOSTRAR MODS DA CATEGORIA =====
 
-const listaCategoriaMods =
-document.getElementById("lista-mods");
+
+// ===== MOSTRAR MODS DA CATEGORIA =====
 
 
 const tituloCategoria =
 document.getElementById("titulo-categoria");
 
 
-if(listaCategoriaMods && tituloCategoria && typeof mods !== "undefined"){
+const listaCategoria =
+document.getElementById("lista-mods");
+
+
+
+if(tituloCategoria && listaCategoria && typeof mods !== "undefined"){
 
 
     const parametros =
     new URLSearchParams(window.location.search);
 
 
+
     const categoria =
     parametros.get("nome");
 
 
+
     tituloCategoria.textContent = categoria;
+
 
 
     mods
@@ -184,24 +237,33 @@ if(listaCategoriaMods && tituloCategoria && typeof mods !== "undefined"){
     .forEach(function(mod){
 
 
-        listaCategoriaMods.innerHTML += `
+
+        listaCategoria.innerHTML += `
 
         <div class="card-mod">
 
+
             <img src="../${mod.imagem}" alt="${mod.nome}">
+
 
             <h3>${mod.nome}</h3>
 
+
             <p>${mod.descricao}</p>
+
 
             <a href="mod.html?id=${mod.id}">
                 <button>VER MOD</button>
             </a>
 
+
         </div>
+
 
         `;
 
+
     });
+
 
 }
