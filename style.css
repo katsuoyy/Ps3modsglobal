@@ -140,58 +140,52 @@ box-shadow:0 0 15px rgba(45,168,255,.5);
 /* =======================
    BANNER
 ======================= */
-
 .banner{
 
-height:500px;
+    height:450px;
 
-display:flex;
+    background:
+    linear-gradient(
+    rgba(0,0,0,.35),
+    rgba(0,0,0,.75)
+    ),
+    url("imagens/banner.jpg");
 
-align-items:center;
+    background-size:cover;
 
-justify-content:center;
+    background-position:center;
 
-text-align:center;
+    display:flex;
 
-background:
+    align-items:center;
 
-linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.75)),
+    justify-content:center;
 
-url("imagens/banner.jpg");
+    text-align:center;
 
-background-size:cover;
+    position:relative;
 
-background-position:center;
-
-}
-
-.banner-texto{
-
-max-width:750px;
-
-padding:20px;
+    overflow:hidden;
 
 }
 
-.banner h2{
 
-font-size:55px;
+/* brilho no banner */
 
-margin-bottom:15px;
+.banner::after{
 
-text-shadow:0 0 20px #000;
+    content:"";
 
-}
+    position:absolute;
 
-.banner p{
+    inset:0;
 
-font-size:22px;
+    background:
+    radial-gradient(circle,
+    transparent 30%,
+    rgba(45,168,255,.25));
 
-color:#ddd;
-
-line-height:1.6;
-
-margin-bottom:30px;
+    pointer-events:none;
 
 }
 
