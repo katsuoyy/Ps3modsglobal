@@ -743,3 +743,107 @@ transform:translateY(0px);
 }
 
 }
+
+/* ===== AJUSTES PARA CELULAR ===== */
+
+@media (max-width: 768px){
+
+    header{
+        flex-direction: column;
+        padding:20px;
+        text-align:center;
+    }
+
+
+    nav{
+        margin-top:15px;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:10px;
+    }
+
+
+    nav a{
+        margin:0;
+        font-size:14px;
+    }
+
+
+
+    .banner{
+
+        height:300px;
+
+        background-position:center;
+
+        background-size:cover;
+
+    }
+
+
+
+    .banner-texto{
+
+        padding:20px;
+
+    }
+
+
+
+    .banner-texto h2{
+
+        font-size:32px;
+
+    }
+
+
+
+    .banner-texto p{
+
+        font-size:16px;
+
+    }
+
+
+
+    .mods{
+
+        padding:20px;
+
+    }
+
+
+
+    .card-mod{
+
+        width:90%;
+
+    }
+
+
+
+    .capa-mod{
+
+        width:90%;
+
+    }
+
+
+
+    .galeria img{
+
+        width:90%;
+        height:auto;
+
+    }
+
+
+
+    .mascote{
+
+        transform:scale(0.8);
+
+    }
+
+}
