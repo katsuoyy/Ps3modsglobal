@@ -838,3 +838,230 @@ transform:translateY(0px);
     }
 
 }
+/* ==========================
+   EFEITO MAGIA / NEVE NO FUNDO
+========================== */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background-image:
+radial-gradient(circle,rgba(255,255,255,.25) 2px,transparent 2px),
+radial-gradient(circle,rgba(45,168,255,.25) 2px,transparent 2px);
+
+background-size:
+120px 120px,
+200px 200px;
+
+animation:neve 25s linear infinite;
+
+pointer-events:none;
+
+z-index:-1;
+
+}
+
+
+
+@keyframes neve{
+
+0%{
+
+background-position:
+0 0,
+0 0;
+
+}
+
+
+100%{
+
+background-position:
+500px 800px,
+-500px 600px;
+
+}
+
+}
+
+
+
+/* ==========================
+   BANNER MAIS DESTACADO
+========================== */
+
+
+.banner{
+
+box-shadow:
+0 0 40px rgba(45,168,255,.35);
+
+}
+
+
+
+.banner::before{
+
+content:"";
+
+position:absolute;
+
+inset:-50%;
+
+background:
+linear-gradient(
+120deg,
+transparent,
+rgba(45,168,255,.25),
+transparent
+);
+
+
+animation:luzBanner 8s infinite;
+
+
+}
+
+
+
+@keyframes luzBanner{
+
+
+0%{
+
+transform:translateX(-100%)
+rotate(20deg);
+
+}
+
+
+50%{
+
+transform:translateX(100%)
+rotate(20deg);
+
+}
+
+
+100%{
+
+transform:translateX(100%)
+rotate(20deg);
+
+}
+
+
+}
+
+
+
+/* deixa o texto acima do efeito */
+
+.banner-texto{
+
+position:relative;
+
+z-index:2;
+
+}
+
+
+
+/* ==========================
+   BANNER COM MAIS CONTRASTE
+========================== */
+
+
+.banner{
+
+background-blend-mode:
+overlay;
+
+}
+
+
+
+.banner-texto h2{
+
+animation:
+brilhoTexto 3s infinite alternate;
+
+}
+
+
+
+@keyframes brilhoTexto{
+
+
+from{
+
+text-shadow:
+0 0 10px #2da8ff;
+
+}
+
+
+to{
+
+text-shadow:
+0 0 30px #2da8ff,
+0 0 50px #0066ff;
+
+}
+
+
+}
+
+
+
+/* ==========================
+   MASCOTE MAIS VIVA
+========================== */
+
+
+.mascote img{
+
+animation:
+balanco 4s ease-in-out infinite;
+
+}
+
+
+
+@keyframes balanco{
+
+
+0%,100%{
+
+transform:
+rotate(0deg);
+
+}
+
+
+25%{
+
+transform:
+rotate(5deg);
+
+}
+
+
+75%{
+
+transform:
+rotate(-5deg);
+
+}
+
+
+   }
