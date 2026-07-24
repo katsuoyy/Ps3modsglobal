@@ -1877,3 +1877,416 @@ section{
     border-radius:15px;
 
     border:2px solid rgba(45,168
+
+/* =====================================
+   FOOTER
+===================================== */
+
+
+footer{
+
+    margin-top:80px;
+
+    background:#101722;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+
+
+.footer{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:50px;
+
+    padding:60px 0;
+
+}
+
+
+
+.footer h3{
+
+    color:#2da8ff;
+
+    font-size:30px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.footer h4{
+
+    font-size:20px;
+
+    margin-bottom:18px;
+
+}
+
+
+
+.footer p{
+
+    color:#cbd5df;
+
+    line-height:1.8;
+
+}
+
+
+
+.footer a{
+
+    display:block;
+
+    margin-bottom:12px;
+
+    color:#b8c2cc;
+
+    transition:.25s;
+
+}
+
+
+
+.footer a:hover{
+
+    color:#2da8ff;
+
+}
+
+
+
+.copyright{
+
+    text-align:center;
+
+    padding:25px;
+
+    color:#8e9bab;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+
+
+/* =====================================
+   MASCOTE
+===================================== */
+
+
+.mascote{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    z-index:999;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+
+
+.mascote img{
+
+    width:95px;
+
+}
+
+
+
+.fala{
+
+    margin-top:10px;
+
+    background:#1b2432;
+
+    padding:10px 15px;
+
+    border-radius:10px;
+
+    max-width:180px;
+
+    text-align:center;
+
+    font-size:13px;
+
+}
+
+
+
+/* =====================================
+   TABLET
+===================================== */
+
+
+@media(max-width:1200px){
+
+
+.cards-home{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+
+.categorias-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+
+}
+
+
+
+ /* =====================================
+    MOBILE
+ ===================================== */
+
+
+@media(max-width:768px){
+
+
+
+.container{
+
+    width:94%;
+
+}
+
+
+
+/* HEADER */
+
+
+.topo{
+
+    position:relative;
+
+    height:auto;
+
+}
+
+
+
+.topo .container{
+
+    height:auto;
+
+    padding:20px 0;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+
+
+.logo h1{
+
+    font-size:25px;
+
+}
+
+
+
+nav{
+
+    width:100%;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+
+
+nav a{
+
+    padding:10px;
+
+    flex:1;
+
+    text-align:center;
+
+}
+
+
+
+.search{
+
+    width:100%;
+
+}
+
+
+
+.search input{
+
+    width:100%;
+
+}
+
+
+
+/* HERO */
+
+
+.hero{
+
+    margin-top:0;
+
+    height:380px;
+
+    justify-content:center;
+
+    text-align:center;
+
+}
+
+
+
+.hero::before{
+
+    background:
+
+    linear-gradient(
+
+    rgba(8,12,18,.85),
+
+    rgba(8,12,18,.85)
+
+    );
+
+}
+
+
+
+.hero-content{
+
+    width:90%;
+
+    margin:0;
+
+}
+
+
+
+.hero-content h2{
+
+    font-size:36px;
+
+}
+
+
+
+.hero-content p{
+
+    font-size:15px;
+
+}
+
+
+
+.btn{
+
+    width:100%;
+
+}
+
+
+
+/* CARDS */
+
+
+.cards-home{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.card-home img{
+
+    height:200px;
+
+}
+
+
+
+/* CATEGORIAS */
+
+
+.categorias-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.categorias-grid a{
+
+    height:80px;
+
+}
+
+
+
+/* LISTA DE MODS */
+
+
+.lista-mods{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.card-mod img{
+
+    height:220px;
+
+}
+
+
+
+/* PÁGINA DO MOD */
+
+
+.pagina-mod{
+
+    width:100%;
+
+    margin-top:40px;
+
+    padding:15px;
+
+}
+
+
+
+.capa-mod{
+
+    width:                          
