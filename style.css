@@ -905,3 +905,105 @@ font-size:28px;
 }
 
 }
+/* ==========================
+AJUSTE FINAL - MOD MOBILE
+========================== */
+
+@media(max-width:768px){
+
+.pagina-mod{
+
+padding:15px;
+
+}
+
+
+.capa-mod{
+
+width:85%;
+
+max-width:300px;
+
+height:auto;
+
+margin-bottom:25px;
+
+}
+
+
+.info-mod{
+
+width:100%;
+
+padding:20px;
+
+}
+
+
+.info-mod h2{
+
+font-size:28px;
+
+}
+
+
+.info-mod p{
+
+font-size:16px;
+
+}
+
+
+.info-mod table{
+
+font-size:14px;
+
+}
+
+
+.info-mod td:first-child{
+
+width:120px;
+
+}
+
+
+.download{
+
+width:100%;
+
+text-align:center;
+
+}
+
+
+.galeria{
+
+grid-template-columns:1fr;
+
+}
+
+
+.galeria img{
+
+height:220px;
+
+}
+
+}
+
+
+/* ==========================
+CAPA DO MOD MENOR DESKTOP
+========================== */
+
+
+@media(min-width:769px){
+
+.capa-mod{
+
+max-width:500px;
+
+}
+
+}
