@@ -1,6 +1,6 @@
-/*======================================
-PS3ModsGlobal v3
-======================================*/
+/*==============================
+PS3ModsGlobal v4
+==============================*/
 
 *{
 margin:0;
@@ -12,7 +12,7 @@ body{
 
 font-family:Segoe UI,Arial,sans-serif;
 
-background:#0c1117;
+background:#0b1118;
 
 color:#fff;
 
@@ -36,17 +36,17 @@ max-width:100%;
 
 .container{
 
-width:min(1400px,92%);
+width:min(1450px,92%);
 
 margin:auto;
 
 }
 
-/*=========================
+/*==============================
 HEADER
-=========================*/
+==============================*/
 
-header{
+.topo{
 
 position:fixed;
 
@@ -56,21 +56,23 @@ left:0;
 
 width:100%;
 
-height:78px;
+background:#111827;
 
-background:#111722;
+border-bottom:1px solid rgba(255,255,255,.08);
+
+z-index:999;
+
+}
+
+.topo .container{
+
+height:80px;
 
 display:flex;
 
 align-items:center;
 
 justify-content:space-between;
-
-padding:0 40px;
-
-border-bottom:1px solid rgba(255,255,255,.08);
-
-z-index:999;
 
 }
 
@@ -82,13 +84,15 @@ color:#4fb7ff;
 
 }
 
-.logo p{
+.logo span{
+
+display:block;
+
+margin-top:4px;
 
 font-size:13px;
 
-color:#b7c3cf;
-
-margin-top:3px;
+color:#b7c4d2;
 
 }
 
@@ -96,13 +100,13 @@ nav{
 
 display:flex;
 
-gap:10px;
+gap:8px;
 
 }
 
 nav a{
 
-padding:10px 18px;
+padding:12px 18px;
 
 border-radius:8px;
 
@@ -116,19 +120,13 @@ background:#4fb7ff;
 
 }
 
-.pesquisa-topo{
+.search input{
 
-display:flex;
-
-align-items:center;
-
-}
-
-.pesquisa-topo input{
-
-width:240px;
+width:230px;
 
 height:42px;
+
+padding:0 15px;
 
 border:none;
 
@@ -136,35 +134,29 @@ outline:none;
 
 border-radius:8px;
 
-padding:0 15px;
-
-background:#1b2432;
+background:#1d2938;
 
 color:white;
 
 }
 
-/*=========================
+/*==============================
 HERO
-=========================*/
+==============================*/
 
 .hero{
 
-margin-top:78px;
+margin-top:80px;
 
-height:650px;
+height:680px;
 
-background:
-
-linear-gradient(to right,
-rgba(8,12,20,.92),
-rgba(8,12,20,.35)),
-
-url("imagens/banner.jpg");
+background:url("imagens/banner.jpg");
 
 background-size:cover;
 
 background-position:center;
+
+position:relative;
 
 display:flex;
 
@@ -172,15 +164,31 @@ align-items:center;
 
 }
 
-.hero-texto{
+.overlay{
 
-width:min(700px,90%);
+position:absolute;
+
+inset:0;
+
+background:linear-gradient(to right,
+rgba(9,13,20,.95),
+rgba(9,13,20,.35));
+
+}
+
+.hero-content{
+
+position:relative;
+
+z-index:2;
+
+width:min(650px,90%);
 
 margin-left:8%;
 
 }
 
-.hero span{
+.hero-content span{
 
 color:#4fb7ff;
 
@@ -190,9 +198,9 @@ font-size:15px;
 
 }
 
-.hero h2{
+.hero-content h2{
 
-font-size:72px;
+font-size:74px;
 
 line-height:1;
 
@@ -200,23 +208,21 @@ margin:20px 0;
 
 }
 
-.hero p{
+.hero-content p{
 
 font-size:20px;
 
-color:#d5d5d5;
-
 line-height:1.8;
 
-max-width:600px;
+color:#d5d5d5;
+
+margin-bottom:35px;
 
 }
 
-.hero button{
+.hero-content button{
 
-margin-top:35px;
-
-padding:16px 40px;
+padding:18px 45px;
 
 background:#4fb7ff;
 
@@ -231,518 +237,5 @@ font-weight:bold;
 color:white;
 
 cursor:pointer;
-
-}
-/*======================================
-SEÇÕES
-======================================*/
-
-section{
-
-padding:70px 0;
-
-}
-
-.titulo-linha{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-margin-bottom:30px;
-
-}
-
-.titulo-linha h2{
-
-font-size:34px;
-
-}
-
-.titulo-linha a{
-
-color:#4fb7ff;
-
-font-weight:bold;
-
-}
-
-/*======================================
-CARDS
-======================================*/
-
-.cards{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
-
-gap:25px;
-
-}
-
-.card{
-
-background:#171f2b;
-
-border-radius:14px;
-
-overflow:hidden;
-
-transition:.25s;
-
-border:1px solid rgba(255,255,255,.05);
-
-}
-
-.card:hover{
-
-transform:translateY(-6px);
-
-}
-
-.card img{
-
-width:100%;
-
-aspect-ratio:16/9;
-
-object-fit:cover;
-
-}
-
-.card .info{
-
-padding:18px;
-
-}
-
-.card h3{
-
-font-size:22px;
-
-margin-bottom:10px;
-
-color:#4fb7ff;
-
-}
-/*======================================
-ÚLTIMOS MODS
-======================================*/
-
-.ultimos-mods{
-
-background:#0f151f;
-
-}
-
-.lista-ultimos{
-
-display:flex;
-
-flex-direction:column;
-
-gap:20px;
-
-}
-
-.item-mod{
-
-display:flex;
-
-align-items:center;
-
-gap:20px;
-
-background:#171f2b;
-
-border-radius:14px;
-
-padding:18px;
-
-transition:.25s;
-
-}
-
-.item-mod:hover{
-
-transform:translateY(-4px);
-
-}
-
-.item-mod img{
-
-width:220px;
-
-height:120px;
-
-object-fit:cover;
-
-border-radius:10px;
-
-}
-
-.item-mod h3{
-
-font-size:24px;
-
-margin-bottom:8px;
-
-color:#4fb7ff;
-
-}
-
-.item-mod p{
-
-color:#cfd7df;
-
-line-height:1.6;
-
-margin-bottom:10px;
-
-}
-
-.item-mod a{
-
-color:#4fb7ff;
-
-font-weight:bold;
-
-}
-
-/*======================================
-FOOTER
-======================================*/
-
-footer{
-
-background:#101722;
-
-margin-top:80px;
-
-padding-top:50px;
-
-border-top:1px solid rgba(255,255,255,.08);
-
-}
-
-.footer-grid{
-
-display:grid;
-
-grid-template-columns:2fr 1fr 1fr;
-
-gap:40px;
-
-padding-bottom:40px;
-
-}
-
-.footer-grid h3{
-
-font-size:28px;
-
-margin-bottom:15px;
-
-color:#4fb7ff;
-
-}
-
-.footer-grid h4{
-
-margin-bottom:15px;
-
-}
-
-.footer-grid p{
-
-color:#cfd7df;
-
-line-height:1.8;
-
-}
-
-.footer-grid ul{
-
-list-style:none;
-
-}
-
-.footer-grid li{
-
-margin-bottom:10px;
-
-}
-
-.footer-grid a{
-
-color:#cfd7df;
-
-}
-
-.footer-grid a:hover{
-
-color:#4fb7ff;
-
-}
-
-.copyright{
-
-padding:20px;
-
-text-align:center;
-
-border-top:1px solid rgba(255,255,255,.08);
-
-color:#94a3b8;
-
-}
-
-/*======================================
-MASCOTE
-======================================*/
-
-.mascote{
-
-position:fixed;
-
-right:20px;
-
-bottom:20px;
-
-z-index:9999;
-
-display:flex;
-
-flex-direction:column;
-
-align-items:center;
-
-}
-
-.mascote img{
-
-width:90px;
-
-}
-
-.fala{
-
-margin-top:8px;
-
-padding:10px 14px;
-
-background:#1b2432;
-
-border-radius:10px;
-
-font-size:13px;
-
-text-align:center;
-
-max-width:180px;
-
-}
-/*======================================
-RESPONSIVO
-======================================*/
-
-@media (max-width:1100px){
-
-header{
-
-padding:0 20px;
-
-}
-
-.hero h2{
-
-font-size:56px;
-
-}
-
-.hero{
-
-height:520px;
-
-}
-
-.footer-grid{
-
-grid-template-columns:1fr;
-
-}
-
-}
-
-@media (max-width:768px){
-
-header{
-
-position:relative;
-
-height:auto;
-
-padding:20px;
-
-flex-direction:column;
-
-gap:20px;
-
-}
-
-.logo{
-
-text-align:center;
-
-}
-
-nav{
-
-width:100%;
-
-display:flex;
-
-flex-wrap:wrap;
-
-justify-content:center;
-
-}
-
-nav a{
-
-padding:10px 15px;
-
-}
-
-.pesquisa-topo{
-
-width:100%;
-
-justify-content:center;
-
-}
-
-.pesquisa-topo input{
-
-width:100%;
-
-max-width:450px;
-
-}
-
-.hero{
-
-margin-top:0;
-
-height:420px;
-
-justify-content:center;
-
-text-align:center;
-
-padding:30px;
-
-}
-
-.hero-texto{
-
-margin:0;
-
-}
-
-.hero h2{
-
-font-size:42px;
-
-}
-
-.hero p{
-
-font-size:17px;
-
-}
-
-.cards{
-
-grid-template-columns:1fr;
-
-}
-
-.item-mod{
-
-flex-direction:column;
-
-align-items:flex-start;
-
-}
-
-.item-mod img{
-
-width:100%;
-
-height:220px;
-
-}
-
-.categorias-grid{
-
-grid-template-columns:1fr 1fr;
-
-}
-
-}
-
-@media (max-width:500px){
-
-.hero{
-
-height:360px;
-
-}
-
-.hero h2{
-
-font-size:34px;
-
-}
-
-.hero p{
-
-font-size:15px;
-
-}
-
-.hero button{
-
-width:100%;
-
-}
-
-.categorias-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.logo h1{
-
-font-size:24px;
-
-}
-
-.logo p{
-
-font-size:12px;
-
-}
-
-.mascote{
-
-display:none;
-
-}
 
 }
