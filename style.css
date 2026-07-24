@@ -1224,3 +1224,179 @@ height:200px;
 
 
 }
+/* ==========================
+   NOVO ESTILO - CARDS NEXUS
+========================== */
+
+.lista-mods{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+
+gap:25px;
+
+}
+
+
+.card-mod{
+
+background:#171d29;
+
+border-radius:12px;
+
+overflow:hidden;
+
+border:1px solid rgba(45,168,255,.18);
+
+transition:.25s;
+
+}
+
+
+.card-mod img{
+
+height:220px;
+
+width:100%;
+
+object-fit:cover;
+
+}
+
+
+.card-mod h3{
+
+font-size:20px;
+
+padding:15px;
+
+color:white;
+
+}
+
+
+.card-mod p{
+
+font-size:14px;
+
+padding:0 15px 15px;
+
+color:#bbb;
+
+min-height:60px;
+
+}
+
+
+/* ==========================
+   CATEGORIAS MAIORES
+========================== */
+
+.lista-categorias{
+
+grid-template-columns:
+
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+}
+
+
+.lista-categorias a{
+
+height:100px;
+
+font-size:20px;
+
+background:#171d29;
+
+}
+
+
+/* ==========================
+   AJUSTE MOBILE REAL
+========================== */
+
+@media(max-width:768px){
+
+.container{
+
+width:94%;
+
+}
+
+
+.lista-mods{
+
+grid-template-columns:1fr;
+
+}
+
+
+.card-mod{
+
+width:100%;
+
+}
+
+
+.card-mod img{
+
+height:200px;
+
+}
+
+
+.lista-categorias{
+
+grid-template-columns:1fr;
+
+}
+
+
+.lista-categorias a{
+
+height:80px;
+
+}
+
+
+header{
+
+position:relative;
+
+}
+
+
+nav{
+
+width:100%;
+
+}
+
+
+nav a{
+
+flex:1;
+
+text-align:center;
+
+}
+
+
+.banner{
+
+height:330px;
+
+}
+
+
+.banner-texto h2{
+
+font-size:34px;
+
+}
+
+}
