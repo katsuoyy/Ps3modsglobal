@@ -220,3 +220,129 @@ button{
     color:white;
 
     font-size:
+/* =========================================
+   PS3ModsGlobal v2
+   PARTE 2
+   CONTEÚDO / CARDS
+=========================================*/
+
+/* =======================
+   SEÇÕES
+======================= */
+
+section{
+
+    width:100%;
+
+}
+
+.sobre,
+.mods{
+
+    width:100%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:60px 30px;
+
+}
+
+.sobre h2,
+.mods h2{
+
+    font-size:38px;
+
+    color:#2da8ff;
+
+    margin-bottom:20px;
+
+}
+
+.sobre p{
+
+    font-size:18px;
+
+    color:#d8d8d8;
+
+    line-height:1.8;
+
+}
+
+/* =======================
+   PESQUISA
+======================= */
+
+.pesquisa{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    margin:35px 0 50px;
+
+}
+
+.pesquisa input{
+
+    width:100%;
+
+    max-width:700px;
+
+    padding:18px 22px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:12px;
+
+    background:#182334;
+
+    color:#ffffff;
+
+    font-size:16px;
+
+}
+
+.pesquisa input::placeholder{
+
+    color:#a8b5c7;
+
+}
+
+/* =======================
+   GRID
+======================= */
+
+.lista-mods{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fill,minmax(340px,1fr));
+
+    gap:30px;
+
+}
+
+/* =======================
+   CARD
+======================= */
+
+.card-mod{
+
+    background:#162233;
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    transition:.25s;
+
+    border:1px solid rgba(255,255,255,.05);
+
+}
