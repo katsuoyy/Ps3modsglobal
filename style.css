@@ -533,3 +533,196 @@ section{
     transform:scale(1.03);
 
 }
+/* =========================================
+   PS3ModsGlobal v2
+   PARTE 4
+   RODAPÉ • MASCOTE • RESPONSIVO
+=========================================*/
+
+/* =======================
+   FOOTER
+======================= */
+
+footer{
+
+    margin-top:80px;
+
+    background:#101926;
+
+    padding:35px;
+
+    text-align:center;
+
+    color:#9aa8ba;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+/* =======================
+   MASCOTE
+======================= */
+
+.mascote{
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:20px;
+
+    z-index:9999;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+.mascote img{
+
+    width:110px;
+
+    display:block;
+
+}
+
+.fala{
+
+    margin-top:10px;
+
+    background:#162233;
+
+    color:#fff;
+
+    padding:10px 14px;
+
+    border-radius:12px;
+
+    font-size:14px;
+
+    text-align:center;
+
+    max-width:190px;
+
+}
+
+/* =======================
+   RESPONSIVO
+======================= */
+
+@media (max-width:900px){
+
+header{
+
+    height:auto;
+
+    flex-direction:column;
+
+    padding:20px;
+
+}
+
+.logo{
+
+    text-align:center;
+
+}
+
+nav{
+
+    margin-top:20px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+.banner{
+
+    height:360px;
+
+    padding:30px;
+
+    justify-content:center;
+
+    text-align:center;
+
+}
+
+.banner-texto{
+
+    max-width:100%;
+
+}
+
+.banner-texto h2{
+
+    font-size:38px;
+
+}
+
+.banner-texto p{
+
+    font-size:17px;
+
+}
+
+.lista-mods{
+
+    grid-template-columns:1fr;
+
+}
+
+.lista-categorias{
+
+    grid-template-columns:1fr;
+
+}
+
+.info-mod{
+
+    padding:25px;
+
+}
+
+.info-mod h1{
+
+    font-size:30px;
+
+}
+
+.galeria{
+
+    grid-template-columns:1fr;
+
+}
+
+.mascote{
+
+    right:10px;
+
+    bottom:10px;
+
+}
+
+.mascote img{
+
+    width:80px;
+
+}
+
+.fala{
+
+    font-size:12px;
+
+    max-width:140px;
+
+}
+
+}
+
+@
