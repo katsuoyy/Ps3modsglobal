@@ -1007,3 +1007,220 @@ max-width:500px;
 }
 
 }
+/* ==========================
+   CORREÇÃO FINAL DO LAYOUT
+   MOBILE + NEXUS STYLE
+========================== */
+
+
+/* CONTAINER GERAL */
+
+.container{
+
+width:92%;
+
+max-width:1400px;
+
+margin:auto;
+
+}
+
+
+/* CARDS DOS MODS */
+
+.lista-mods{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
+
+gap:25px;
+
+}
+
+
+.card-mod{
+
+border-radius:12px;
+
+}
+
+
+.card-mod img{
+
+height:230px;
+
+object-fit:cover;
+
+}
+
+
+/* DIMINUI CAPAS GRANDES */
+
+.card-mod h3{
+
+font-size:20px;
+
+}
+
+
+.card-mod p{
+
+font-size:15px;
+
+}
+
+
+/* CATEGORIAS MAIORES */
+
+.lista-categorias{
+
+grid-template-columns:
+
+repeat(auto-fill,minmax(260px,1fr));
+
+}
+
+
+.lista-categorias a{
+
+height:100px;
+
+font-size:20px;
+
+}
+
+
+/* BANNER MOBILE */
+
+@media(max-width:768px){
+
+
+header{
+
+padding:15px;
+
+}
+
+
+.logo h1{
+
+font-size:26px;
+
+}
+
+
+nav a{
+
+padding:8px 12px;
+
+}
+
+
+.banner{
+
+height:350px;
+
+background-position:center;
+
+}
+
+
+.banner-texto h2{
+
+font-size:35px;
+
+}
+
+
+.banner-texto p{
+
+font-size:15px;
+
+}
+
+
+.mods{
+
+padding:40px 15px;
+
+}
+
+
+.lista-mods{
+
+grid-template-columns:1fr;
+
+gap:20px;
+
+}
+
+
+.card-mod{
+
+width:100%;
+
+}
+
+
+.card-mod img{
+
+height:200px;
+
+}
+
+
+/* CORRIGE CENTRALIZAÇÃO */
+
+.pagina-mod{
+
+width:100%;
+
+margin:20px auto;
+
+padding:15px;
+
+}
+
+
+.capa-mod{
+
+width:100%;
+
+max-width:320px;
+
+}
+
+
+.info-mod{
+
+width:100%;
+
+padding:20px;
+
+}
+
+
+.info-mod h2{
+
+font-size:28px;
+
+}
+
+
+.galeria{
+
+grid-template-columns:1fr;
+
+}
+
+
+.galeria img{
+
+height:200px;
+
+}
+
+
+
+}
