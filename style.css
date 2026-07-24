@@ -246,3 +246,175 @@ color:white;
 font-weight:bold;
 
 }
+/*==============================
+SEÇÕES
+==============================*/
+
+section{
+
+padding:70px 0;
+
+}
+
+
+.titulo{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:35px;
+
+}
+
+
+.titulo h2{
+
+font-size:36px;
+
+color:#fff;
+
+}
+
+
+.titulo a{
+
+color:#2da8ff;
+
+font-weight:bold;
+
+}
+
+
+
+/*==============================
+CARDS DOS MODS
+==============================*/
+
+
+.lista-mods{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:22px;
+
+}
+
+
+.card-mod{
+
+background:#171d29;
+
+border-radius:10px;
+
+overflow:hidden;
+
+border:1px solid rgba(45,168,255,.15);
+
+}
+
+
+.card-mod img{
+
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+}
+
+
+.card-mod h3{
+
+font-size:20px;
+
+padding:15px;
+
+color:#fff;
+
+}
+
+
+.card-mod p{
+
+padding:0 15px 20px;
+
+font-size:14px;
+
+color:#bfc7d1;
+
+line-height:1.5;
+
+}
+
+
+/*==============================
+CAPA HOME
+==============================*/
+
+
+.cards-home{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:22px;
+
+}
+
+
+.card-home{
+
+background:#171d29;
+
+border-radius:10px;
+
+overflow:hidden;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+
+.card-home img{
+
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+}
+
+
+.card-home .texto{
+
+padding:18px;
+
+}
+
+
+.card-home h3{
+
+color:#2da8ff;
+
+font-size:22px;
+
+margin-bottom:10px;
+
+}
+
+
+.card-home p{
+
+color:#cbd5df;
+
+line-height:1.5;
+
+}
