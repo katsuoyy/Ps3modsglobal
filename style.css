@@ -1335,3 +1335,228 @@ height:190px;
 
 
 }
+/*==============================
+AJUSTE FINAL MOBILE + LIMPEZA
+==============================*/
+
+
+@media(max-width:900px){
+
+.topo,
+header{
+
+position:relative;
+
+}
+
+
+.topo .container,
+header{
+
+flex-direction:column;
+
+padding:20px;
+
+}
+
+
+nav{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+
+nav a{
+
+font-size:14px;
+
+padding:10px 12px;
+
+}
+
+
+.search input{
+
+width:100%;
+
+}
+
+
+
+/* BANNER */
+
+.banner,
+.hero{
+
+height:360px;
+
+}
+
+
+.banner-texto,
+.hero-content{
+
+width:90%;
+
+margin:auto;
+
+text-align:center;
+
+}
+
+
+.banner-texto h2,
+.hero-content h2{
+
+font-size:34px;
+
+}
+
+
+.banner-texto p,
+.hero-content p{
+
+font-size:16px;
+
+}
+
+
+
+/* MODS */
+
+
+.lista-mods{
+
+grid-template-columns:repeat(2,1fr);
+
+gap:15px;
+
+}
+
+
+.card-mod img{
+
+height:180px;
+
+}
+
+
+
+/* HOME */
+
+
+.cards-home{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+
+/* CATEGORIAS */
+
+
+.categorias-grid,
+.lista-categorias{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+
+/* PÁGINA MOD */
+
+
+.capa-mod{
+
+width:90%;
+
+height:auto;
+
+}
+
+
+.info-mod{
+
+width:100%;
+
+padding:20px;
+
+}
+
+
+
+}
+
+
+
+@media(max-width:600px){
+
+
+.lista-mods,
+.cards-home,
+.categorias-grid,
+.lista-categorias{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.card-mod img{
+
+height:220px;
+
+}
+
+
+
+.capa-mod{
+
+width:100%;
+
+}
+
+
+
+.info-mod h1,
+.info-mod h2{
+
+font-size:28px;
+
+}
+
+
+
+.ultimo-card{
+
+flex-direction:column;
+
+}
+
+
+
+.ultimo-card img{
+
+width:100%;
+
+height:200px;
+
+}
+
+
+
+footer{
+
+padding:25px 15px;
+
+}
+
+
+
+}
