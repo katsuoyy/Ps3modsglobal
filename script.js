@@ -98,3 +98,82 @@ if (typeof mods !== "undefined") {
     }
 
 }
+// ---------- CATEGORIAS AUTOMÁTICAS ----------
+
+const listaCategorias = document.getElementById("lista-categorias");
+
+if (listaCategorias && typeof mods !== "undefined") {
+
+    const categorias = [...new Set(mods.map(mod => mod.categoria))];
+
+    categorias.sort();
+
+    categorias.forEach(categoria => {
+
+        listaCategorias.innerHTML += `
+
+        <a class="card-categoria"
+        href="categoria.html?nome=${encodeURIComponent(categoria)}">
+
+            ${categoria}
+
+        </a>
+
+        `;
+
+    });
+
+}
+
+
+
+// ---------- PÁGINA DA CATEGORIA ----------
+
+const tituloCategoria = document.getElementById("titulo-categoria");
+
+const nomeCategoria = document.getElementById("nome-categoria");
+
+const listaCategoria = document.getElementById("lista-mods");
+
+if (
+    tituloCategoria &&
+    listaCategoria &&
+    typeof mods !== "undefined"
+) {
+
+    const parametros = new URLSearchParams(window.location.search);
+
+    const categoria = parametros.get("nome");
+
+    if (nomeCategoria)
+        nomeCategoria.textContent = categoria;
+
+    tituloCategoria.textContent = categoria;
+
+    listaCategoria.innerHTML = "";
+
+    mods
+        .filter(mod => mod.categoria === categoria)
+        .forEach(mod => {
+
+            listaCategoria.innerHTML += `
+
+            <div class="card-mod">
+
+                <img src="../${mod.imagem}" alt="${mod.nome}">
+
+                <h3>${mod.nome}</h3>
+
+                <p>${mod.descricao}</p>
+
+                <a href="mod.html?id=${mod.id}">
+                    <button>VER MOD</button>
+                </a>
+
+            </div>
+
+            `;
+
+        });
+
+}
