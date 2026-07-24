@@ -2290,3 +2290,126 @@ nav a{
 .capa-mod{
 
     width:                          
+/* ==========================
+   AJUSTE NEXUS - GRID MODS
+========================== */
+
+
+.lista-mods{
+
+grid-template-columns:
+
+repeat(4,1fr);
+
+gap:22px;
+
+}
+
+
+.card-mod{
+
+border-radius:12px;
+
+background:#171d29;
+
+}
+
+
+.card-mod img{
+
+height:180px;
+
+}
+
+
+.card-mod h3{
+
+font-size:19px;
+
+}
+
+
+.card-mod p{
+
+font-size:14px;
+
+min-height:65px;
+
+}
+
+
+/* ==========================
+   CATEGORIAS MAIORES
+========================== */
+
+
+.lista-categorias{
+
+grid-template-columns:
+
+repeat(3,1fr);
+
+gap:25px;
+
+}
+
+
+.lista-categorias a{
+
+height:110px;
+
+font-size:20px;
+
+}
+
+
+/* ==========================
+   RESPONSIVO
+========================== */
+
+
+@media(max-width:1100px){
+
+.lista-mods{
+
+grid-template-columns:repeat(3,1fr);
+
+}
+
+}
+
+
+@media(max-width:800px){
+
+.lista-mods{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+.lista-categorias{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+
+@media(max-width:500px){
+
+.lista-mods{
+
+grid-template-columns:1fr;
+
+}
+
+
+.card-mod img{
+
+height:220px;
+
+}
+
+}
