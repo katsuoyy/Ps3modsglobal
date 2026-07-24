@@ -1085,3 +1085,99 @@ text-align:center;
 
 
 }
+/*==============================
+AJUSTE DE FUNDO E ESPAÇAMENTO
+==============================*/
+
+
+body{
+
+background:
+
+linear-gradient(
+
+180deg,
+
+#0b1118 0%,
+
+#101827 100%
+
+);
+
+}
+
+
+
+/* SEÇÕES MAIS ORGANIZADAS */
+
+
+section{
+
+padding:70px 0;
+
+}
+
+
+.titulo h2{
+
+font-size:34px;
+
+}
+
+
+
+/* DESTAQUE DOS MODS */
+
+
+.card-mod{
+
+min-height:330px;
+
+}
+
+
+.card-mod img{
+
+background:#0b1118;
+
+}
+
+
+
+/* BOTÃO PRINCIPAL */
+
+
+.hero-content button{
+
+transition:none;
+
+}
+
+
+.hero-content button:hover{
+
+background:#258bd0;
+
+}
+
+
+
+/* BUSCA */
+
+
+.search input::placeholder{
+
+color:#8b98a8;
+
+}
+
+
+
+/* SCROLL */
+
+
+html{
+
+scroll-behavior:smooth;
+
+}
