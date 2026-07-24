@@ -920,3 +920,168 @@ text-align:center;
 
 
 }
+/*==============================
+AJUSTES FINAIS NEXUS STYLE
+==============================*/
+
+
+button,
+.download{
+
+cursor:pointer;
+
+}
+
+
+/* BOTÕES */
+
+.download{
+
+display:inline-block;
+
+margin-top:25px;
+
+padding:15px 35px;
+
+background:#4fb7ff;
+
+border-radius:8px;
+
+font-weight:bold;
+
+color:white;
+
+}
+
+
+.download:hover{
+
+background:#258bd0;
+
+}
+
+
+
+/* TABELA DO MOD */
+
+.tabela-mod{
+
+width:100%;
+
+margin-top:25px;
+
+border-collapse:collapse;
+
+}
+
+
+.tabela-mod td{
+
+padding:14px;
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+
+.tabela-mod td:first-child{
+
+color:#4fb7ff;
+
+font-weight:bold;
+
+width:200px;
+
+}
+
+
+
+/* PÁGINA DE CATEGORIA */
+
+.lista-categorias{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:20px;
+
+}
+
+
+.lista-categorias a{
+
+height:100px;
+
+background:#171d29;
+
+border-radius:10px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+font-size:18px;
+
+font-weight:bold;
+
+border:1px solid rgba(45,168,255,.15);
+
+}
+
+
+.lista-categorias a:hover{
+
+background:#4fb7ff;
+
+}
+
+
+
+/* ESPAÇAMENTO MOBILE EXTRA */
+
+@media(max-width:600px){
+
+
+.info-mod{
+
+padding:20px;
+
+}
+
+
+.info-mod h1{
+
+font-size:28px;
+
+}
+
+
+.tabela-mod td:first-child{
+
+width:120px;
+
+}
+
+
+.lista-categorias{
+
+grid-template-columns:1fr;
+
+}
+
+
+.download{
+
+width:100%;
+
+text-align:center;
+
+}
+
+
+}
