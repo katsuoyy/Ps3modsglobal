@@ -55,3 +55,46 @@ if (pesquisa) {
     });
 
 }
+// ---------- PÁGINA DO MOD ----------
+
+if (typeof mods !== "undefined") {
+
+    const parametros = new URLSearchParams(window.location.search);
+
+    const id = Number(parametros.get("id"));
+
+    const mod = mods.find(m => m.id === id);
+
+    if (mod && document.getElementById("nome")) {
+
+        document.title = mod.nome;
+
+        document.getElementById("nome").textContent = mod.nome;
+
+        document.getElementById("categoria").textContent = mod.categoria;
+
+        document.getElementById("descricao").textContent = mod.descricao;
+
+        document.getElementById("capa").src = "../" + mod.imagem;
+
+        document.getElementById("download").href = mod.download;
+
+        const galeria = document.getElementById("galeria");
+
+        if (galeria) {
+
+            galeria.innerHTML = "";
+
+            mod.galeria.forEach(foto => {
+
+                galeria.innerHTML += `
+                    <img src="../${foto}" alt="">
+                `;
+
+            });
+
+        }
+
+    }
+
+}
