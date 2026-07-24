@@ -2413,3 +2413,171 @@ height:220px;
 }
 
 }
+/* ==========================
+   AJUSTE SEM EFEITOS
+   VISUAL NEXUS LIMPO
+========================== */
+
+
+/* remover animações antigas */
+
+.banner::before,
+.banner::after,
+body::before,
+.mascote img{
+
+animation:none;
+
+}
+
+
+/* BANNER */
+
+.banner{
+
+height:520px;
+
+box-shadow:none;
+
+}
+
+
+.banner-texto h2{
+
+animation:none;
+
+text-shadow:none;
+
+}
+
+
+/* CARDS DOS MODS */
+
+.lista-mods{
+
+grid-template-columns:
+
+repeat(4,1fr);
+
+gap:20px;
+
+}
+
+
+.card-mod{
+
+border-radius:8px;
+
+box-shadow:none;
+
+transform:none;
+
+}
+
+
+.card-mod:hover{
+
+transform:none;
+
+box-shadow:none;
+
+}
+
+
+.card-mod:hover img{
+
+transform:none;
+
+}
+
+
+.card-mod img{
+
+height:220px;
+
+border-radius:8px 8px 0 0;
+
+}
+
+
+/* CATEGORIAS */
+
+.lista-categorias{
+
+grid-template-columns:
+
+repeat(3,1fr);
+
+}
+
+
+.lista-categorias a{
+
+height:100px;
+
+border-radius:8px;
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+
+.lista-mods{
+
+grid-template-columns:
+
+repeat(2,1fr);
+
+gap:12px;
+
+}
+
+
+.card-mod img{
+
+height:150px;
+
+}
+
+
+.card-mod h3{
+
+font-size:16px;
+
+padding:12px;
+
+}
+
+
+.card-mod p{
+
+display:none;
+
+}
+
+
+.lista-categorias{
+
+grid-template-columns:1fr;
+
+}
+
+
+.banner{
+
+height:350px;
+
+}
+
+
+.mascote{
+
+display:none;
+
+}
+
+
+}
