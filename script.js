@@ -1,13 +1,14 @@
-// ===== LISTA DE TODOS OS MODS =====
+// ===============================
+// PS3ModsGlobal Script v2.0
+// ===============================
+
+// ---------- TODOS OS MODS ----------
 
 const listaMods = document.getElementById("lista-mods");
 
+if (listaMods && typeof mods !== "undefined") {
 
-if(listaMods && typeof mods !== "undefined"){
-
-
-    mods.forEach(function(mod){
-
+    mods.forEach(mod => {
 
         listaMods.innerHTML += `
 
@@ -19,251 +20,38 @@ if(listaMods && typeof mods !== "undefined"){
 
             <p>${mod.descricao}</p>
 
-
             <a href="mod.html?id=${mod.id}">
                 <button>VER MOD</button>
             </a>
-
 
         </div>
 
         `;
 
-
     });
-
 
 }
 
-
-
-
-// ===== PESQUISA =====
-
+// ---------- PESQUISA ----------
 
 const pesquisa = document.getElementById("pesquisa");
 
+if (pesquisa) {
 
-if(pesquisa){
+    pesquisa.addEventListener("keyup", () => {
 
+        const texto = pesquisa.value.toLowerCase();
 
-    pesquisa.addEventListener("keyup",function(){
+        document.querySelectorAll(".card-mod").forEach(card => {
 
+            const nome = card.querySelector("h3").textContent.toLowerCase();
 
-        let texto = pesquisa.value.toLowerCase();
-
-
-        document.querySelectorAll(".card-mod").forEach(function(card){
-
-
-            let nome =
-            card.querySelector("h3")
-            .textContent
-            .toLowerCase();
-
-
-            card.style.display =
-            nome.includes(texto) ? "" : "none";
-
+            card.style.display = nome.includes(texto)
+                ? "block"
+                : "none";
 
         });
 
-
     });
-
-
-}
-
-
-
-
-// ===== PÁGINA DO MOD =====
-
-
-if(typeof mods !== "undefined"){
-
-
-    const parametros =
-    new URLSearchParams(window.location.search);
-
-
-    const id =
-    Number(parametros.get("id"));
-
-
-    const mod =
-    mods.find(m => m.id === id);
-
-
-
-    if(mod){
-
-
-        if(document.getElementById("nome"))
-        document.getElementById("nome").textContent = mod.nome;
-
-
-
-        if(document.getElementById("categoria"))
-        document.getElementById("categoria").textContent = mod.categoria;
-
-
-
-        if(document.getElementById("descricao"))
-        document.getElementById("descricao").textContent = mod.descricao;
-
-
-
-        if(document.getElementById("capa"))
-        document.getElementById("capa").src =
-        "../" + mod.imagem;
-
-
-
-        if(document.getElementById("download"))
-        document.getElementById("download").href =
-        mod.download;
-
-
-
-        const galeria =
-        document.getElementById("galeria");
-
-
-
-        if(galeria && mod.galeria){
-
-
-            mod.galeria.forEach(function(foto){
-
-
-                galeria.innerHTML += `
-
-                <img src="../${foto}">
-
-                `;
-
-
-            });
-
-
-        }
-
-
-    }
-
-
-}
-
-
-
-
-// ===== CRIAR CATEGORIAS AUTOMATICAMENTE =====
-
-
-const listaCategorias =
-document.getElementById("lista-categorias");
-
-
-
-if(listaCategorias && typeof mods !== "undefined"){
-
-
-    const categorias =
-    [...new Set(mods.map(mod => mod.categoria))];
-
-
-
-    categorias.sort();
-
-
-
-    categorias.forEach(function(categoria){
-
-
-
-        listaCategorias.innerHTML += `
-
-        <a class="card-categoria"
-        href="categoria.html?nome=${encodeURIComponent(categoria)}">
-
-        ${categoria}
-
-        </a>
-
-        `;
-
-
-    });
-
-
-}
-
-
-
-
-
-// ===== MOSTRAR MODS DA CATEGORIA =====
-
-
-const tituloCategoria =
-document.getElementById("titulo-categoria");
-
-
-const listaCategoria =
-document.getElementById("lista-mods");
-
-
-
-if(tituloCategoria && listaCategoria && typeof mods !== "undefined"){
-
-
-    const parametros =
-    new URLSearchParams(window.location.search);
-
-
-
-    const categoria =
-    parametros.get("nome");
-
-
-
-    tituloCategoria.textContent = categoria;
-
-
-
-    mods
-    .filter(mod => mod.categoria === categoria)
-    .forEach(function(mod){
-
-
-
-        listaCategoria.innerHTML += `
-
-        <div class="card-mod">
-
-
-            <img src="../${mod.imagem}" alt="${mod.nome}">
-
-
-            <h3>${mod.nome}</h3>
-
-
-            <p>${mod.descricao}</p>
-
-
-            <a href="mod.html?id=${mod.id}">
-                <button>VER MOD</button>
-            </a>
-
-
-        </div>
-
-
-        `;
-
-
-    });
-
 
 }
