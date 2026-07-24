@@ -1400,3 +1400,150 @@ font-size:34px;
 }
 
 }
+/* ==========================
+   AJUSTE FINAL HOME
+========================== */
+
+header{
+
+max-width:1400px;
+
+margin:auto;
+
+border-radius:0 0 20px 20px;
+
+}
+
+
+/* BANNER MAIS PARECIDO COM NEXUS */
+
+.banner{
+
+height:520px;
+
+}
+
+
+.banner-texto{
+
+max-width:700px;
+
+}
+
+
+.banner-texto h2{
+
+font-size:55px;
+
+}
+
+
+.banner-texto p{
+
+font-size:20px;
+
+line-height:1.7;
+
+}
+
+
+/* SEÇÃO SOBRE */
+
+.sobre{
+
+max-width:1100px;
+
+margin:auto;
+
+text-align:center;
+
+padding:70px 20px;
+
+}
+
+
+.sobre h2{
+
+font-size:38px;
+
+color:#2da8ff;
+
+margin-bottom:20px;
+
+}
+
+
+.sobre p{
+
+font-size:18px;
+
+line-height:1.8;
+
+color:#ccc;
+
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+header{
+
+border-radius:0;
+
+width:100%;
+
+}
+
+
+.logo h1{
+
+font-size:25px;
+
+}
+
+
+nav{
+
+width:100%;
+
+}
+
+
+nav a{
+
+width:auto;
+
+}
+
+
+.banner{
+
+height:380px;
+
+}
+
+
+.banner-texto h2{
+
+font-size:35px;
+
+}
+
+
+.banner-texto p{
+
+font-size:15px;
+
+}
+
+
+.sobre h2{
+
+font-size:28px;
+
+}
+
+}
