@@ -4,7 +4,8 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
 <title>Todos os Mods</title>
 
@@ -14,15 +15,17 @@
 
 <body>
 
-<header>
+<header class="topo">
 
-<div class="logo">
+<div class="container">
+
+<a class="logo" href="../index.html">
 
 <h1>PS3ModsGlobal</h1>
 
-<p>Todos os Mods</p>
+<span>Skyrim Legendary Edition</span>
 
-</div>
+</a>
 
 <nav>
 
@@ -32,21 +35,13 @@
 
 <a href="categorias.html">Categorias</a>
 
+<a href="#">Tutoriais</a>
+
+<a href="#">Contato</a>
+
 </nav>
 
-</header>
-
-<section class="banner-pequeno">
-
-<h2>Todos os Mods</h2>
-
-<p>Encontre rapidamente o mod que procura.</p>
-
-</section>
-
-<section class="mods">
-
-<div class="pesquisa">
+<div class="search">
 
 <input
 type="text"
@@ -55,23 +50,34 @@ placeholder="Pesquisar mods...">
 
 </div>
 
-<div
-id="lista-mods"
-class="lista-mods">
+</div>
+
+</header>
+
+<section class="banner-pequeno">
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<span>BIBLIOTECA</span>
+
+<h2>Todos os Mods</h2>
+
+<p>
+
+Encontre todos os mods disponíveis.
+
+</p>
 
 </div>
 
 </section>
 
-<footer>
+<section class="mods">
 
-© 2026 PS3ModsGlobal
+<div class="container">
 
-</footer>
+<div class="cards-home"
 
-<script src="../mods.js"></script>
-<script src="../script.js"></script>
-
-</body>
-
-</html>
+id="lista-mods">
